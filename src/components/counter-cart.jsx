@@ -4,12 +4,13 @@ import { Button, ButtonGroup } from 'reactstrap';
 class Counter extends Component {
     constructor(props){
         super(props);
-        this.state={count:0}
+        this.state={count:this.props.jumlah}
 
     }
     
     handleClickPositive(){
         this.setState({count:this.state.count +1});
+        this.props.setItemInCart(this.props.allItem + this.state.count)
     }
     handleClickNegative(){
       if(this.state.count>0){
