@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import Counter from './counter-cart';
+import { Container, Row, Col } from 'reactstrap';
+
 
 class ContentCart extends Component {
   state = {  }
@@ -10,11 +13,20 @@ class ContentCart extends Component {
           choosedMenu.length ? choosedMenu.map(item => {
             return (
               <>
-                <img src={item.images} alt=""/>
-                <p>{item.menu}</p>
-                <p>{`Rp.${item.price}`}</p>
-                
-                {/* <Counter jumlah={item.jumlah} allItem={choosedMenu.length} setItemInCart={this.setItemInCart}/> */}
+                <Container fluid={true}>
+                  <Row className="content-cart">
+                    <Col className="img-cart"><img src={item.images} alt=""/></Col>
+                    <Col>
+                      <Row>
+                        <Col><p>{item.menu}</p></Col>
+                      </Row>
+                      <Row>
+                        <Col><Counter/></Col>
+                      </Row>
+                    </Col>
+                    <Col><p>{`Rp.${item.price}`}</p></Col>
+                  </Row>
+                </Container> 
               </>
             )
           })
@@ -24,10 +36,14 @@ class ContentCart extends Component {
             <p>Please add some items from the menu</p>
         </div>
         }
+        {choosedMenu.length ?
+        <div>
+          <p>*Belum termasuk ppn</p>
+          <button type="button" className="btn btn-lg btn-block btn-checkout">Checkout</button>
+          <button type="button" className="btn btn-lg btn-block btn-cancel">Cancel</button>
+        </div>
+         :""}
         
-        {/* <p>*Belum termasuk ppn</p>
-        <button type="button" className="btn btn-lg btn-block btn-checkout">Checkout</button>
-        <button type="button" className="btn btn-lg btn-block btn-cancel">Cancel</button> */}
       </div>
     );
   }

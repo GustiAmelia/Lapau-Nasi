@@ -7,7 +7,8 @@ class Cart extends Component {
     render() { 
         return ( 
             <div>
-                <HeaderCart/>
+                <HeaderCart
+                totalCart={this.props.totalCart}/>
                 <ContentCart
                 choosedMenu={this.props.choosedMenu}
                 />

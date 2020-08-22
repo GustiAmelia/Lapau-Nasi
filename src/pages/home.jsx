@@ -4,14 +4,6 @@ import Cart from '../components/cart/cart';
 import Axios from 'axios';
 import { Container, Row, Col } from 'reactstrap';
 
-const addNumInArr = (arr) => {
-	let result = 0
-	for (let i = 0; i<arr.length; i++) {
-		result = arr[i] + result
-	}
-	return result
-}
-
 class Home extends Component {
 
   constructor(props){
@@ -19,7 +11,8 @@ class Home extends Component {
     this.state={
       menus:[],
       choosedMenu:[],
-      isCheckListOpen:false
+      isCheckListOpen:false,
+      totalCart:0
     }
   }
 
@@ -42,23 +35,16 @@ class Home extends Component {
 			} else {
 				choosedMenu.splice(id, 1)
 			}
-			console.log(choosedMenu)
+      console.log(choosedMenu)
+      console.log(choosedMenu.length)
 
 		}
 
-    let allItemInCart = []
-    for (let i in choosedMenu) {
-      allItemInCart.push(choosedMenu[i].jumlah)
-    }
-    console.log(allItemInCart)
-
 		this.setState({
       choosedMenu,
-      allItemInCart: addNumInArr(allItemInCart)
+      totalCart:choosedMenu.length
+      // allItemInCart: addNumInArr(allItemInCart)
 		})
-
-    // this.handlerAddCart()
-    // this.handlerChecklist()
   }
 
   handlerAddCart=()=>{
@@ -92,6 +78,8 @@ class Home extends Component {
             </Col>
             <Col md="4" lg="4" xl="4" className="cart-item">
               <Cart
+              totalCart={this.state.totalCart}
+              click={this.handleOnClick}
               choosedMenu={this.state.choosedMenu}
               />
             </Col>

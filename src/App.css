@@ -72,6 +72,14 @@
   color: #CECECE;
 }
 
+.content-cart{
+  margin-top:15px;
+}
+
+.img-cart img{
+  width:100px;
+  height:100px
+}
 /* MODAL */
 .check{
   background-color: rgba(0, 0, 0, 0.6);
