@@ -1,3 +1,7 @@
+.home{
+  position: relative;
+}
+
 /* HEADER */
 
 .header{
@@ -108,6 +112,12 @@
   background: #F24F8A; color:#ffffff
 }
 
+.modalCheckout{
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-color: #57CAD5;
+}
 /* RESPONSIV / MEDIA QUERY */
 
 /* Extra small devices (portrait phones, less than 576px) */

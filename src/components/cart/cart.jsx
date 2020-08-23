@@ -11,6 +11,7 @@ class Cart extends Component {
                 totalCart={this.props.totalCart}/>
                 <ContentCart
                 choosedMenu={this.props.choosedMenu}
+                countQuantity={this.props.countQuantity}
                 />
             </div>
          );

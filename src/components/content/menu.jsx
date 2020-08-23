@@ -4,7 +4,6 @@ class Menu extends Component {
 
  
   render() { 
-
     let check;
     if(this.props.isCheckListOpen){
       check=(

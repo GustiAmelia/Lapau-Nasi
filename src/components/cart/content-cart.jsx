@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
-import Counter from './counter-cart';
 import { Container, Row, Col } from 'reactstrap';
+import Counter from './counter-qty';
+// import ModalCheckout from './modalCheckout';
+
 
 
 class ContentCart extends Component {
-  state = {  }
+
+  
   render() { 
     const{choosedMenu}=this.props
     return ( 
@@ -21,7 +24,9 @@ class ContentCart extends Component {
                         <Col><p>{item.menu}</p></Col>
                       </Row>
                       <Row>
-                        <Col><Counter/></Col>
+                        <Col> 
+                          <Counter choosedMenu={this.props.choosedMenu}/>
+                        </Col>
                       </Row>
                     </Col>
                     <Col><p>{`Rp.${item.price}`}</p></Col>
@@ -43,7 +48,6 @@ class ContentCart extends Component {
           <button type="button" className="btn btn-lg btn-block btn-cancel">Cancel</button>
         </div>
          :""}
-        
       </div>
     );
   }
