@@ -27,7 +27,6 @@
 .card-menu{
   background:rgba(190,195,202,0.3);
   margin: auto;
-  cursor: pointer;
   position: relative;
 }
 
@@ -37,6 +36,7 @@
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
   border-radius: 3px;
   position: relative;
+  cursor: pointer;
 }
 .menuItem img{
   width:200px;
@@ -84,6 +84,18 @@
   width:100px;
   height:100px
 }
+
+.total-font{
+  text-align: left;
+  font-weight: bold;
+}
+.total{
+  text-align: right;
+  font-weight: bold;
+}
+.text-ppn{
+  text-align: left;
+}
 /* MODAL */
 .check{
   background-color: rgba(0, 0, 0, 0.6);
@@ -112,12 +124,10 @@
   background: #F24F8A; color:#ffffff
 }
 
-.modalCheckout{
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  background-color: #57CAD5;
-}
+          /* HISTORY */
+
+
+
 /* RESPONSIV / MEDIA QUERY */
 
 /* Extra small devices (portrait phones, less than 576px) */

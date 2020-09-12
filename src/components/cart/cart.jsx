@@ -1,21 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
 import HeaderCart from './header-cart';
 import ContentCart from './content-cart';
 
-class Cart extends Component {
-    state = {  }
-    render() { 
-        return ( 
-            <div>
-                <HeaderCart
-                totalCart={this.props.totalCart}/>
-                <ContentCart
-                choosedMenu={this.props.choosedMenu}
-                countQuantity={this.props.countQuantity}
-                />
-            </div>
-         );
-    }
+const Cart =({increase,decrease,carts,removeCart})=> {
+
+  return ( 
+    <div>
+      <HeaderCart
+      carts={carts}/>
+      <ContentCart
+      increase={increase}
+      decrease={decrease}
+      removeCart={removeCart}
+      />
+    </div>
+    );
+
 }
  
 export default Cart;

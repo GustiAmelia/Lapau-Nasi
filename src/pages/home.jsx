@@ -1,94 +1,46 @@
 import React, { Component } from 'react';
 import Content from '../components/content/content';
 import Cart from '../components/cart/cart';
-import Axios from 'axios';
 import { Container, Row, Col } from 'reactstrap';
+import {connect} from 'react-redux';
+import {getAllMenus,itemToCart,
+  incrementCreator,decrementCreator,removeCartCreator} from '../redux/actions/menu';
+
+
 
 class Home extends Component {
 
   constructor(props){
     super(props);
     this.state={
-      menus:[],
-      choosedMenu:[],
+      
       isCheckListOpen:false,
-      totalCart:0,
-      countQuantity:0,
       
     }
   }
-//ini ya? ya, yg handle harganya mn, yg itu yg belom sa, gua bingung naroh dimana
-//mksdnya yg tulisan 15rbnya itu ngimport apa gmn, oh wait
-  handleOnClick=(index)=>{
-    // this.handlerChecklist();
-    const {menus} = this.state;
-    const choosedMenu = [...this.state.choosedMenu];
-    
-		// cari data yang idnya sama dengan yang diklik
-		let idDataDiKlik = menus[index].id;
-		if (choosedMenu.length === 0) {
-      choosedMenu.push(menus[index])
-      console.log("id", idDataDiKlik)
-      // choosedMenu[0].jumlah = 1
-		} else {
-			let id = choosedMenu.findIndex(item => item.id === idDataDiKlik);
-			console.log(id)
-			if (id === -1) {
-        choosedMenu.push(menus[index]);
-        
-        // choosedMenu[index].jumlah = 1
-			} else {
-				choosedMenu.splice(id, 1)
-			}
-      console.log(choosedMenu)
-      console.log(choosedMenu.length)
-
-		}
-
-		this.setState({
-      choosedMenu,
-      totalCart:choosedMenu.length
-		})
-  }
-
-  handlerAddCart=()=>{
-    console.log("hai")
-  }
-  handlerChecklist(){
-    this.setState({isCheckListOpen:true})
-  }
-  
+ 
   componentDidMount =()=>{
-    const urlString = 'http://localhost:7000/product';
-    Axios.get(urlString)
-    .then((res)=>{
-      console.log(res)
-        this.setState({
-            menus : res.data.results
-           
-        })
+    this.props.getAllMenus();
+  }
 
-    }).catch((err)=>{
-        console.log(err)
-    })
-}
-    render() { 
+    render() {
+      const {menus,carts,itemToCart,increase,decrease,removeCart}=this.props
       return (
         <Container fluid={true}>
           <Row>
             <Col md="8" lg="8" xl="8">
               <Content 
-              menus={this.state.menus}
-              click={this.handleOnClick}
+              menus={menus}
+              click={itemToCart}
               isCheckListOpen={this.state.isCheckListOpen}
               />
             </Col>
             <Col md="4" lg="4" xl="4" className="cart-item">
               <Cart
-              totalCart={this.state.totalCart}
-              countQuantity={this.state.countQuantity}
-              click={this.handleOnClick}
-              choosedMenu={this.state.choosedMenu}
+              increase={increase}
+              decrease={decrease}
+              removeCart={removeCart}
+              carts={carts}
               />
             </Col>
           </Row>
@@ -96,5 +48,24 @@ class Home extends Component {
       );
     }
 }
+
+const mapStateToProps=(state)=>{
+  return{
+    menus : state.menu.menus,
+    carts :state.menu.carts
+  }
+}
+
+const mapDispatchToProps =(dispatch)=>{
+  return{
+    getAllMenus:()=>dispatch(getAllMenus()),
+    itemToCart:(id,images,name,price)=>dispatch(itemToCart(id,images,name,price)),
+    increase:(id)=>dispatch(incrementCreator(id)),
+    decrease :(id)=>dispatch(decrementCreator(id)),
+    removeCart :()=>dispatch(removeCartCreator())
+
+  }
+  
+}
  
-export default Home;
+export default connect(mapStateToProps,mapDispatchToProps)(Home);

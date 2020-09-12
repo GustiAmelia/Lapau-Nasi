@@ -1,25 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
+import menu from '../../images/menu.png';
+import magnifying from '../../images/magnifying-glass.png';
 
-class Header extends Component {
-  
-  state={
-
-  }
-
-  render() {
+const Header=()=>{
     return(
       <>  
         <Container fluid={true}>
             <Row>
-                <Col><img src={process.env.PUBLIC_URL +'./images/menu (1).png'} alt="mecuIcon"/></Col>
+                <Col><img src={menu} alt="mecuIcon"/></Col>
                 <Col><h1 className='fontTitle'>Food Items</h1></Col>
-                <Col><img src={process.env.PUBLIC_URL +'./images/magnifying-glass.png'} alt="" className='float-right'/></Col>
+                <Col><img src={magnifying} alt="" className='float-right'/></Col>
             </Row>
         </Container>
     </>
     );
-  }
 }
  
 export default Header;

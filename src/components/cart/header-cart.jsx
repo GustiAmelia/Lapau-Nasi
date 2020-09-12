@@ -1,13 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class HeaderCart extends Component {
-    render() { 
+const HeaderCart =({carts})=> {
         return ( 
             <div className="cart-header">
-                <h5>Cart <span className="zero">{this.props.totalCart}</span></h5>
+                <h5>Cart <span className="zero">{carts.length}</span></h5>
             </div>
         );
-    }
+    
 }
  
 export default HeaderCart;

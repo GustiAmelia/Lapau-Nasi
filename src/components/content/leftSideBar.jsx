@@ -1,15 +1,29 @@
-import React, { Component } from 'react';
+import React from 'react';
+import fork from '../../images/fork.png';
+import clipboard from '../../images/clipboard.png';
+import add from '../../images/add.png';
+import ModalAddProduct from '../modal/modalAddProduct';
+import { useState } from 'react';
 
-class LeftSideBar extends Component {
-  render() { 
+
+const LeftSideBar=(props)=> {
+  const [showModal, setShowModal] = useState(false);
+
+  const handleShowModal = () => setShowModal(true);
+  const handleCloseModal = () => setShowModal(false);
     return (  
       <div className='leftSideBar'>
-        <img src={process.env.PUBLIC_URL + './images/fork.png'} alt=""/>
-        <img src={process.env.PUBLIC_URL + './images/clipboard.png'} alt=""/>
-        <img src={process.env.PUBLIC_URL + './images/add.png'} alt=""/>
+        <img src={fork} alt=""/>
+        <img src={clipboard} alt=""/>
+        <img src={add} onClick={handleShowModal}alt=""/>
+        <ModalAddProduct
+                showModal={showModal}
+                handleCloseModal={handleCloseModal}
+                fetchAllProducts={props.fetchAllProducts}
+            />
       </div>
     );
-  }
+  
 }
  
 export default LeftSideBar;
