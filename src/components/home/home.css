@@ -1,5 +1,5 @@
 .home{
-  position: fixed;
+  position: relative;
   height: 100vh;
 }
 .navbar-home{
@@ -186,4 +186,64 @@ h1{
   color: #FFFFFF;
   width: 90%;
   margin-left: 1.5vw;
+}
+
+/* Modal Checkout */
+
+.header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.order-wrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 1vh;
+}
+.ppn-wrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 2vh;
+}
+.total-price{
+  text-align: right;
+  font-size:1.5625em;
+  margin-bottom: 2vh;
+  margin-right: 2.5vw;
+}
+.payment{
+  font-size:1.5625em;
+  margin-bottom: 3vh;
+  margin-left: 1.5vw;
+}
+.or{
+  text-align: center;
+  font-size:1.5625em;
+  margin-top: 0.5vh;
+  margin-bottom: 0.5vh;
+}
+.btn-print{
+  background: #57CAD5;
+  color: #FFFFFF;
+  width: 90%;
+  margin-left: 1.5vw;
+}
+.btn-send{
+  background: #F24F8A;
+  color: #FFFFFF;
+  width: 90%;
+  margin-left: 1.5vw;
+}
+.text-modalcheckout{
+  font-size:1.5625em;
+}
+.text-modalcheckout-cashier{
+  font-size: 1.25em;
+  margin-bottom: 7vh;
+}
+.footer{
+  padding-bottom: 1vh;
+  padding-top: 1vh;
 }

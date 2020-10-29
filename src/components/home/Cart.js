@@ -1,6 +1,7 @@
 import React from 'react';
 import noCart from '../../assets/image/food-and-restaurant.png';
 import CartCard from './CartCard';
+import ModalCheckout from '../modal/ModalCheckout';
 
 const Cart =()=> {
   const data =[
@@ -49,8 +50,9 @@ const Cart =()=> {
             <h5>Rp5.000,00*</h5>
           </div>
           <p className='msg-ppn'>*Belum termasuk ppn</p>
-          <button type="button" className="btn btn-lg btn-block btn-checkout">Checkout</button>
+          <button type="submit" className="btn btn-lg btn-block btn-checkout" data-toggle="modal" data-target="#modalCheckout">Checkout</button>
           <button type="button" className="btn btn-lg btn-block btn-cancel">Cancel</button>
+          <ModalCheckout/>
         </>
       }
     </div>
