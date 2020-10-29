@@ -1,153 +1,20 @@
-.home{
-  position: relative;
-}
-
-/* HEADER */
-
-.header{
-  padding-top:28px;
-  height:100px;
-  background: #FFFFFF;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
-}
-
-.fontTitle{
-  margin-top: -5px;
-  text-align: center;
-}
-
-/* LEFT SIDE BAR */
-.leftSideBar img{
-  padding-top: 30px;
-  
-}
-
-
-/* CONTENT MENU */
-.card-menu{
-  background:rgba(190,195,202,0.3);
-  margin: auto;
-  position: relative;
-}
-
-.menuItem{
-  margin: 15px;
-  float: left;
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
-  border-radius: 3px;
-  position: relative;
-  cursor: pointer;
-}
-.menuItem img{
-  width:200px;
-  height:150;
-}
-
-/* CART */
-.cart-item{
-  text-align: center;
-  background: #FFFFFF;
-  border: 1px solid #CECECE;
-}
-
-.cart-header{
-  font-size: 25px;
-  background: #FFFFFF;
-  box-shadow: 0px 4px 1px rgba(0, 0, 0, 0.25);
-  height :106px;
-}
-
-.zero{
-  background: #57CAD5;
-  font-family: Airbnb Cereal App;
-  font-size: 20px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-radius: 100%;
-  color: #ffffff;
-}
-
-.noCart h5{
-  font-size: 30px
-}
-
-.noCart p{
-  font-size: 20px;
-  color: #CECECE;
-}
-
-.content-cart{
-  margin-top:15px;
-}
-
-.img-cart img{
-  width:100px;
-  height:100px
-}
-
-.total-font{
-  text-align: left;
-  font-weight: bold;
-}
-.total{
-  text-align: right;
-  font-weight: bold;
-}
-.text-ppn{
-  text-align: left;
-}
-/* MODAL */
-.check{
-  background-color: rgba(0, 0, 0, 0.6);
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
-.check-img{
-  position: absolute;
-  top:30%;
-  left:40%;
-}
-
-.check-img img{
-  width: 50px;
-  height: 50px;
-}
-
-.btn-checkout{
-  background: #57CAD5;color:#ffffff
-}
-.btn-cancel{
-  background: #F24F8A; color:#ffffff
-}
-
-          /* HISTORY */
-
-
-
-/* RESPONSIV / MEDIA QUERY */
-
-/* Extra small devices (portrait phones, less than 576px) */
-@media (max-width: 575.98px) {
-  .fontTitle{
-    font-size: 30px;
-    margin-top: -20px;
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
   }
-
-
 }
 
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) and (max-width: 767.98px) {}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) and (max-width: 991.98px) {}
-
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) and (max-width: 1199.98px) {}
-
-/* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {}
+/* icon */
+.icon{
+  width: 2.1875em;
+  height: 2.1875em;
+}

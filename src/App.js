@@ -1,18 +1,14 @@
 import React from 'react';
 import './App.css';
-// import Home from './pages/home';
-import History from './pages/history';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+import Home from './pages/Home';
 
-
-function App() {
+const App =()=> {
   return (
-    <div>
-      <History/>
-      {/* <Home/> */}
-    </div>
+    <Router>
+      <Home/>
+    </Router>
   );
-}
+};
 
 export default App;
-
-
