@@ -247,3 +247,24 @@ h1{
   padding-bottom: 1vh;
   padding-top: 1vh;
 }
+
+/* modal add product */
+.footer-modal-add{
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 3vh;
+}
+.btn-cancel-add{
+  width:  6.25em;
+  background: #F24F8A;
+  border-radius: 10px;
+  color:#FFFFFF;
+  margin-right: 2vw;
+}
+.btn-add{
+  width:  6.25em;
+  background: #57CAD5;
+  border-radius: 10px;
+  color:#FFFFFF;
+  margin-right: 2vw;
+}
