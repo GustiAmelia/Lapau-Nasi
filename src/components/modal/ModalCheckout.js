@@ -1,14 +1,12 @@
-import React from 'react';
+import React,{useEffect} from 'react';
+import {useDispatch,useSelector} from 'react-redux';
 
-const ModalCheckout =()=> {
+const ModalCheckout =({total})=> {
 
-  const pesanan = [
-    {name:'expresso', price:10000 ,id:1},
-    {name:'capuucino', price:10000 ,id:2},
-    {name:'susu jahe', price:10000 ,id:3},
-    {name:'susu jahe', price:10000 ,id:3},
-    {name:'susu jahe', price:10000 ,id:3},
-  ]
+  const carts = useSelector((state)=>state.menu.carts);
+  const ppn = total*0.1;
+  const payment = total + ppn;
+
   return (
     <div className="modal fade" id="modalCheckout" tabIndex="-1">
       <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
@@ -19,21 +17,21 @@ const ModalCheckout =()=> {
               <h6 className='text-modalcheckout'>Receipt no: #6325890</h6>
             </div>
             <h6 className='text-modalcheckout-cashier'>Cashier :  Pevita Pearce</h6>
-            {pesanan.map((item,index)=>{
+            {carts.map((item,index)=>{
               return (
                 <div className='order-wrapper' key={index}>
-                  <h6 className='text-modalcheckout'>{item.name}</h6>
-                  <h6 className='text-modalcheckout'>{item.price}</h6>
+                  <h6 className='text-modalcheckout'>{item.product_name} {item.quantity}x</h6>
+                  <h6 className='text-modalcheckout'>{(item.price*item.quantity).toLocaleString('id', { style: 'currency', currency: 'IDR' })}</h6>
                 </div>
               )
             })}
             <div className='ppn-wrapper'>
               <h6 className='text-modalcheckout'>Ppn 10%</h6>
-              <h6 className='text-modalcheckout'>10000</h6>
+              <h6 className='text-modalcheckout'>{ppn.toLocaleString('id', { style: 'currency', currency: 'IDR' })}</h6>
             </div>
           </div>
           <div className='footer'>
-            <h6 className='total-price'>Total: Rp.1.000.000,00</h6>
+            <h6 className='total-price'>Total: {payment.toLocaleString('id', { style: 'currency', currency: 'IDR' })}</h6>
             <h6 className='payment'>Payment : Cash</h6>
             <button type="button" className="btn btn-lg btn-block btn-print" >Print</button>
             <h6 className='or'>Or</h6>

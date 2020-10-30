@@ -17,18 +17,6 @@ const Home =()=> {
 
   const data = useSelector((state)=>state.menu.menus);
 
-  // const data =[
-  //   {name:'Espresso',price:1000,id:1},
-  //   {name:'Cappucino',price:1000,id:2},
-  //   {name:'Coffee Latte',price:1000,id:3},
-  //   {name:'Nasi Goreng',price:1000,id:4},
-  //   {name:'Ayam Gulai',price:1000,id:5},
-  //   {name:'Ayam Bumbu',price:1000,id:6},
-  //   {name:'Ayam Bakar',price:1000,id:7},
-  //   {name:'Nasi Kuning',price:1000,id:8},
-  //   {name:'Nasi Bakar',price:1000,id:9},
-  //   {name:'Nasi Bumbu',price:1000,id:10},
-  // ]
   return (
     <div className='row no-gutters home'>
       <div className='col col-md-8'>

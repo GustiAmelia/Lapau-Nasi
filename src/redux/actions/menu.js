@@ -9,14 +9,14 @@ export const getAllMenus =(page,limit)=>{
   };
 };
 
-export const itemToCart = (id,images, name, price ) => {
+export const itemToCart = (id,image, product_name, price ) => {
   return {
       type: actions.addMenuToCart,
       payload: {
           id,
-          images,
+          image,
           quantity: 1,
-          name,
+          product_name,
           price,
       }
   };
