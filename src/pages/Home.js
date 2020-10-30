@@ -1,24 +1,34 @@
-import React from 'react';
+import React,{useEffect} from 'react';
+import {useDispatch,useSelector} from 'react-redux';
 import '../components/home/home.css';
 import Navbar from '../components/home/Navbar';
 import SideBar from '../components/home/SideBar';
 import CardMenu from '../components/home/CardMenu';
 import Cart from '../components/home/Cart';
+import {getAllMenus} from '../redux/actions/menu';
 
 const Home =()=> {
-  
-  const data =[
-    {name:'Espresso',price:1000,id:1},
-    {name:'Cappucino',price:1000,id:2},
-    {name:'Coffee Latte',price:1000,id:3},
-    {name:'Nasi Goreng',price:1000,id:4},
-    {name:'Ayam Gulai',price:1000,id:5},
-    {name:'Ayam Bumbu',price:1000,id:6},
-    {name:'Ayam Bakar',price:1000,id:7},
-    {name:'Nasi Kuning',price:1000,id:8},
-    {name:'Nasi Bakar',price:1000,id:9},
-    {name:'Nasi Bumbu',price:1000,id:10},
-  ]
+
+  const dispatch = useDispatch();
+
+  useEffect(()=>{
+    dispatch(getAllMenus(1,6))
+  },[])
+
+  const data = useSelector((state)=>state.menu.menus);
+
+  // const data =[
+  //   {name:'Espresso',price:1000,id:1},
+  //   {name:'Cappucino',price:1000,id:2},
+  //   {name:'Coffee Latte',price:1000,id:3},
+  //   {name:'Nasi Goreng',price:1000,id:4},
+  //   {name:'Ayam Gulai',price:1000,id:5},
+  //   {name:'Ayam Bumbu',price:1000,id:6},
+  //   {name:'Ayam Bakar',price:1000,id:7},
+  //   {name:'Nasi Kuning',price:1000,id:8},
+  //   {name:'Nasi Bakar',price:1000,id:9},
+  //   {name:'Nasi Bumbu',price:1000,id:10},
+  // ]
   return (
     <div className='row no-gutters home'>
       <div className='col col-md-8'>

@@ -2,10 +2,10 @@ import {fetchAllMenu} from '../../services/urlApi';
 
 import * as actions from './actionTypes'
 
-export const getAllMenus =()=>{
+export const getAllMenus =(page,limit)=>{
   return{
     type : actions.fetchMenu,
-    payload :fetchAllMenu(),
+    payload :fetchAllMenu(page,limit),
   };
 };
 

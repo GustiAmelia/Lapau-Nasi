@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const ModalAddProduct =()=> {
   return (
@@ -8,29 +8,29 @@ const ModalAddProduct =()=> {
           <div className="modal-body">
             <h6>Add Item</h6>
             <form>
-              <div class="form-group row">
-                <label for="name" class="col-sm-2 col-form-label">Name</label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" id="name"/>
+              <div className="form-group row">
+                <label htmlFor="name" className="col-sm-2 col-form-label">Name</label>
+                <div className="col-sm-10">
+                  <input type="text" className="form-control" id="name"/>
                 </div>
               </div>
-              <div class="form-group row">
-                <label for="image" class="col-sm-2 col-form-label">Image</label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" id="image"/>
+              <div className="form-group row">
+                <label htmlFor="image" className="col-sm-2 col-form-label">Image</label>
+                <div className="col-sm-10">
+                  <input type="text" className="form-control" id="image"/>
                 </div>
               </div>
-              <div class="form-group row">
-                <label for="price" class="col-sm-2 col-form-label">Price</label>
-                <div class="col-sm-10">
-                  <input type="number" class="form-control" id="price"/>
+              <div className="form-group row">
+                <label htmlFor="price" className="col-sm-2 col-form-label">Price</label>
+                <div className="col-sm-10">
+                  <input type="number" className="form-control" id="price"/>
                 </div>
               </div>
-              <div class="form-group row">
-                <label for="category" class="col-sm-2 col-form-label">Category</label>
-                <div class="form-group col-md-4">
-                  <select id="category" class="form-control">
-                    <option selected>Choose...</option>
+              <div className="form-group row">
+                <label htmlFor="category" className="col-sm-2 col-form-label">Category</label>
+                <div className="form-group col-md-4">
+                  <select id="category" className="form-control">
+                    <option defaultValue>Choose...</option>
                     <option>...</option>
                   </select>
                 </div>
