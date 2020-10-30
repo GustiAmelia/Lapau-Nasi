@@ -9,7 +9,8 @@ const initialState={
 }
 
 const menuReducers =(state=initialState,action)=>{
-  let newCart =[...state.carts]
+  let newCart =[...state.carts];
+  let newMenu =[...state.menus];
   switch(action.type){
     case actions.fetchMenu + actions.pending:
       return{
@@ -34,18 +35,33 @@ const menuReducers =(state=initialState,action)=>{
       const index = state.carts.findIndex((item) => {
         return action.payload.id === item.id;
       });
+      const indexMenu = state.menus.findIndex((item) => {
+        return action.payload.id === item.id;
+      });
       if (index >= 0) {
-        let newCart=[...state.carts.filter(cart=>{
+        newCart=[...state.carts.filter(cart=>{
           return cart.id !== action.payload.id})];
+        newMenu[indexMenu] = {
+          ...newMenu[indexMenu],
+          selected: false,
+        }
         return {
            ...state,
-           carts: [...newCart]}
+           carts: [...newCart],
+           menus:[...newMenu],
+        }
        }
       else {
-      return {
-        ...state,
-        carts: state.carts.concat(action.payload)}
-     }
+        newMenu[indexMenu] = {
+          ...newMenu[indexMenu],
+          selected: true,
+        }
+        return {
+          ...state,
+          carts: state.carts.concat(action.payload),
+          menus:[...newMenu]
+        }
+      };
     case actions.removeItemCart:{
       return{
         ...state,
