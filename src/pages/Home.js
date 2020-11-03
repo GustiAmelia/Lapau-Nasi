@@ -6,7 +6,10 @@ import SideBar from '../components/home/SideBar';
 import CardMenu from '../components/home/CardMenu';
 import Cart from '../components/home/Cart';
 import {getAllMenus} from '../redux/actions/menu';
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
+toast.configure()
 const Home =()=> {
 
   const dispatch = useDispatch();

@@ -1,5 +1,6 @@
 import * as actions from '../actions/actionTypes';
 
+
 const initialState={
   menus:[],
   carts:[],
@@ -62,12 +63,11 @@ const menuReducers =(state=initialState,action)=>{
           menus:[...newMenu]
         }
       };
-    case actions.removeItemCart:{
+    case actions.removeItemCart:
       return{
         ...state,
-        carts :[]
+        carts :[],
       }
-    }
     case actions.increase:
          const indexQtyInc = state.carts.findIndex((item) => {
             return action.payload.id === item.id;
@@ -99,7 +99,6 @@ const menuReducers =(state=initialState,action)=>{
             carts:state.carts
           }
         }
-        
     default:
       return state;
   }

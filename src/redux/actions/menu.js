@@ -1,4 +1,4 @@
-import {fetchAllMenu} from '../../services/urlApi';
+import {fetchAllMenu,addTransation} from '../../services/urlApi';
 
 import * as actions from './actionTypes'
 
@@ -44,6 +44,13 @@ export const decrementCreator = (id)=>{
 export const removeCartCreator =()=>{
   return{
     type : actions.removeItemCart
+  }
+}
+
+export const addTransactionCreator =(data)=>{
+  return{
+    type : actions.addNewTransaction,
+    payload : addTransation(data)
   }
 }
 
