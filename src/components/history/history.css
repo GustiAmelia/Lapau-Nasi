@@ -1,0 +1,79 @@
+.history{
+  position: relative;
+}
+.navbar-history{
+  width:100%;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 10px rgba(206, 113, 113, 0.25);
+  height: 10%;
+  position: fixed;
+  z-index: 100;
+}
+.content-history{
+  padding-top: 10vh;
+  padding-right: 2vw;
+}
+.card{
+  /* height: 213px;
+  justify-content: center; */
+  padding-left:2vw;
+  margin-top: 5vh;
+  position: relative;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+}
+.card-today-income{
+  background: linear-gradient(278.29deg, #FBB2B4 30.05%, rgba(255, 143, 178, 0) 133.19%);
+  filter: drop-shadow(10px 15px 10px rgba(255, 143, 178, 0.25));
+  border-radius: 10px;
+}
+.card-orders{
+  background: linear-gradient(278.29deg, #29DFFF 30.05%, rgba(41, 223, 255, 0) 133.19%);
+  filter: drop-shadow(10px 15px 10px rgba(41, 223, 255, 0.25));
+  border-radius: 10px;
+}
+.card-this-year-income{
+  background: linear-gradient(278.29deg, #AB84C8 30.05%, rgba(241, 201, 236, 0) 133.19%);
+  filter: drop-shadow(10px 15px 10px rgba(241, 201, 236, 0.25));
+  border-radius: 10px;
+}
+.buble{
+  position: absolute;
+  background: rgba(241, 201, 236, 0.3);
+  height: 6em;
+  width: 6em;
+  border-radius: 100%;
+}
+.title-card-history{
+  font-size: 0.9375em;
+  color: #000000;
+}
+.total-income{
+  font-size: 1.875em;
+  color:#000000;
+}
+
+.chart-wrapper{
+  width: 100%;
+  padding-right: 1vw;
+  margin-top: 7vh;
+  background: #FFFFFF;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+.header-chart{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.header-table{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.table-wrapper{
+  background: #FFFFFF;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  margin-top: 7vh;
+}

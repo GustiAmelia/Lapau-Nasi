@@ -33,3 +33,51 @@ export const addTransation =(data)=>{
         })
       })
 }
+
+export const fetchAllCategory = ()=>{
+    return Axios.get(`${process.env.REACT_APP_API_URL}/category`);
+}
+
+export const addNewProduct = (data)=>{
+    let formData = new FormData();
+    formData.append('product_name',data.name);
+    formData.append('product_image',data.image);
+    formData.append('price',data.price);
+    formData.append('category_id',data.category_id);
+
+    const configHeader = {
+        headers: {
+          'content-type': 'multipart/form-data',
+          contentType: false,
+          mimeType: 'multipart/form-data',
+          'cache-control': 'no-cache',
+          accept: 'application/json',
+        },
+      };
+    
+      return Axios.post(`${process.env.REACT_APP_API_URL}/product`,formData,configHeader)
+      .then(res=>{
+        if(res.data.isSuccess){
+          toast('Upload Product Success',{
+            className:'uploadSuccess',
+            draggable:true,
+            autoClose:false,
+            transition:Bounce,
+          })
+        }
+        else{
+          toast.error('Upload Product Failed!, please fill in the form first',{
+            className:'uploadFailed',
+            draggable:true,
+            autoClose:5000,
+            transition:Bounce,
+          })
+        }
+      })
+      .catch(err=>{
+        toast.error('Network Error',{
+          draggable:true,
+          autoClose:false,
+        })
+      })
+}

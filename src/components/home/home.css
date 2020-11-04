@@ -25,6 +25,7 @@ h1{
   height: 100%;
   background: #FFFFFF;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  position: fixed;
 }
 .icon-sidebar{
   /* width: 3.440625em; */
@@ -267,6 +268,22 @@ h1{
   border-radius: 10px;
   color:#FFFFFF;
   margin-right: 2vw;
+}
+.title-add-product{
+  font-size: 1.875em;
+  color: #000000;
+  margin-bottom: 3vh;
+}
+.form-add-product{
+  background: #FFFFFF;
+  border: 1px solid #CECECE;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+.col-form-label{
+  color: #000000;
+  font-weight: bold;
 }
 
 /* check */

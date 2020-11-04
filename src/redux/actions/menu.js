@@ -1,4 +1,4 @@
-import {fetchAllMenu,addTransation} from '../../services/urlApi';
+import {fetchAllMenu,addTransation,fetchAllCategory,addNewProduct} from '../../services/urlApi';
 
 import * as actions from './actionTypes'
 
@@ -51,6 +51,20 @@ export const addTransactionCreator =(data)=>{
   return{
     type : actions.addNewTransaction,
     payload : addTransation(data)
+  }
+}
+
+export const getCategory = ()=>{
+  return {
+    type : actions.fetchCategory,
+    payload:fetchAllCategory(),
+  }
+}
+
+export const addProductCreator =(data)=>{
+  return {
+    type:actions.addProduct,
+    payload:addNewProduct(data),
   }
 }
 

@@ -5,7 +5,7 @@ import Navbar from '../components/home/Navbar';
 import SideBar from '../components/home/SideBar';
 import CardMenu from '../components/home/CardMenu';
 import Cart from '../components/home/Cart';
-import {getAllMenus} from '../redux/actions/menu';
+import {getAllMenus,getCategory} from '../redux/actions/menu';
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -15,7 +15,8 @@ const Home =()=> {
   const dispatch = useDispatch();
 
   useEffect(()=>{
-    dispatch(getAllMenus(1,6))
+    dispatch(getAllMenus(1,6));
+    dispatch(getCategory())
   },[])
 
   const data = useSelector((state)=>state.menu.menus);
