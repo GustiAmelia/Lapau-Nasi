@@ -8,6 +8,7 @@ import Cart from '../components/home/Cart';
 import {getAllMenus,getCategory} from '../redux/actions/menu';
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ModalAddProduct from '../components/modal/ModalAddProduct';
 
 toast.configure()
 const Home =()=> {
@@ -42,6 +43,7 @@ const Home =()=> {
       <div className='col col-md-4'>
         <Cart/>
       </div>
+      <ModalAddProduct/>
     </div>
   );
 };

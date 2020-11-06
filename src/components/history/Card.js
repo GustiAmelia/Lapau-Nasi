@@ -5,7 +5,7 @@ const Card =()=> {
     <div>
       <div className='row'>
         <div className='col col-sm-6 col-md-4'>
-          <div className="card card-today-income">
+          <div className="card card-history card-today-income">
             <div className="card-content">
               <h6 className='title-card-history'>Today’s Income</h6>
               <h5 className='total-income'>RP.1.000.000</h5>
@@ -17,7 +17,7 @@ const Card =()=> {
           </div>
         </div>
         <div className='col col-sm-6 col-md-4'>
-          <div className="card card-orders">
+          <div className="card card-history card-orders">
             <div className="card-content">
               <h6 className='title-card-history'>Orders</h6>
               <h5 className='total-income'>RP.1.000.000</h5>
@@ -29,7 +29,7 @@ const Card =()=> {
           </div>
         </div>
         <div className='col col-sm-6 col-md-4'>
-          <div className="card card-this-year-income">
+          <div className="card card-history card-this-year-income">
             <div className="card-content">
               <h6 className='title-card-history'>This Year’s Income</h6>
               <h5 className='total-income'>RP.1.000.000</h5>
