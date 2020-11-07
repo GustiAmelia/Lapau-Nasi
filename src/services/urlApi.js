@@ -81,3 +81,19 @@ export const addNewProduct = (data)=>{
         })
       })
 }
+
+export const signIn =(credentials)=>{
+  return Axios.post(`${process.env.REACT_APP_API_URL}/auth/login`,{
+    email:credentials.email,
+    password:credentials.password,
+  })
+}
+
+export const signUp =(newUser)=>{
+  return Axios.post(`${process.env.REACT_APP_API_URL}/auth/register`,{
+    fullname : newUser.fullname,
+    email:newUser.email,
+    password: newUser.password,
+    level_id:2
+  })
+}

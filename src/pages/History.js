@@ -1,12 +1,20 @@
-import React from 'react';
+import React,{useEffect} from 'react';
+import {useDispatch,useSelector} from 'react-redux';
 import menu from '../assets/image/hamb-menu.png';
 import SideBar from '../components/home/SideBar';
 import Card from '../components/history/Card';
 import '../components/history/history.css';
 import RevenueChart from '../components/history/RevenueChart';
 import HistoryTable from '../components/history/HistoryTable';
+import {Redirect} from 'react-router-dom';
+import ModalLogOut from '../components/modal/ModalLogOut';
+import ModalAddProduct from '../components/modal/ModalAddProduct';
 
 const History =()=> {
+
+  const isLogin = useSelector((state)=>state.auth.isLogin)
+  if(isLogin === false) return <Redirect to='/signin'/>
+
   return (
     <div className='history'>
       <div className='navbar navbar-history'>
@@ -24,6 +32,8 @@ const History =()=> {
           <HistoryTable/>
         </div>
       </div>
+      <ModalAddProduct/>
+      <ModalLogOut/>
     </div>
   )
 }

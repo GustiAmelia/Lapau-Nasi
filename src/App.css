@@ -27,6 +27,8 @@
   background: #F24F8A;
   border-radius: 10px;
   color: #ffffff;
+  width: 100%;
+  margin-top: 3vh;
 }
 .auth{
   background-image: url(./assets/image/background.jpg);
@@ -45,5 +47,20 @@
   padding-bottom: 5vh;
   border-radius: 10px;
   margin-left: 60vw;
-  
+}
+.link-wrapper{
+  display: flex;
+  justify-content: center;
+  color: #000000;
+  margin-top: 2vh;
+}
+.link{
+  color: #F24F8A;
+  font-weight: bold;
+}
+
+.errorMessage{
+  color:red;
+  text-align: center;
+  font-weight: bold;
 }

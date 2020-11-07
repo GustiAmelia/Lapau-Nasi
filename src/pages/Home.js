@@ -9,6 +9,8 @@ import {getAllMenus,getCategory} from '../redux/actions/menu';
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ModalAddProduct from '../components/modal/ModalAddProduct';
+import {Redirect} from 'react-router-dom';
+import ModalLogOut from '../components/modal/ModalLogOut';
 
 toast.configure()
 const Home =()=> {
@@ -22,6 +24,9 @@ const Home =()=> {
 
   const data = useSelector((state)=>state.menu.menus);
 
+  const isLogin = useSelector((state)=>state.auth.isLogin)
+  if(isLogin === false) return <Redirect to='/signin'/>
+  
   return (
     <div className='row no-gutters home'>
       <div className='col col-md-8'>
@@ -44,6 +49,7 @@ const Home =()=> {
         <Cart/>
       </div>
       <ModalAddProduct/>
+      <ModalLogOut/>
     </div>
   );
 };
