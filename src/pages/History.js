@@ -15,6 +15,7 @@ const History =()=> {
   const isLogin = useSelector((state)=>state.auth.isLogin)
   if(isLogin === false) return <Redirect to='/signin'/>
 
+
   return (
     <div className='history'>
       <div className='navbar navbar-history'>

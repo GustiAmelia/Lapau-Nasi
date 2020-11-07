@@ -1,6 +1,11 @@
-import React from 'react';
+import React,{useEffect} from 'react';
+import {useDispatch,useSelector} from 'react-redux';
+import moment from 'moment';
 
 const HistoryTable =()=> {
+
+  const history = useSelector((state)=>state.history.history);
+  
   return (
     <div className='table-wrapper'>
       <div className='header-table'>
@@ -10,28 +15,28 @@ const HistoryTable =()=> {
           <option>Year</option>
         </select>
       </div>
-      <table class="table table-hover">
+      <table className="table table-hover">
         <thead>
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">INVOICES</th>
+            <th scope="col">CASHIER</th>
+            <th scope="col">DATE</th>
+            <th scope="col">ORDERS</th>
+            <th scope="col">AMOUNT</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
+          {history.map((item,index)=>{
+            return (
+              <tr key={index}>
+                <td>{item.invoice}</td>
+                <td>{item.cashier}</td>
+                <td>{moment(item.date).format('DD MMMM YYYY')}</td>
+                <td>{item.orders.split(',').join(', ')}</td>
+                <td>{item.amount.toLocaleString('id', { style: 'currency', currency: 'IDR' })}</td>
+              </tr>
+            )
+          })}
         </tbody>
       </table>
     </div>

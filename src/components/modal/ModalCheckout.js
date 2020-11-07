@@ -4,6 +4,7 @@ import {addTransactionCreator,removeCartCreator,getAllMenus} from '../../redux/a
 
 const ModalCheckout =({total})=> {
   const carts = useSelector((state)=>state.menu.carts);
+  const user =useSelector((state)=>state.auth.user.data);
   const ppn = total*0.1;
   const payment = total + ppn;
 
@@ -17,7 +18,7 @@ const ModalCheckout =({total})=> {
 
   const data = {
     invoice,
-    cashier:'Amel',
+    cashier:user.fullname,
     amount:payment,
     transaction:transactionItem,
   }
@@ -39,7 +40,7 @@ const ModalCheckout =({total})=> {
               <h6 style={{fontSize:' 1.875em'}}>Checkout</h6>
               <h6 className='text-modalcheckout'>Receipt no: {invoice}</h6>
             </div>
-            <h6 className='text-modalcheckout-cashier'>Cashier :  Pevita Pearce</h6>
+            <h6 className='text-modalcheckout-cashier'>Cashier :  {user.fullname}</h6>
             {carts.map((item,index)=>{
               return (
                 <div className='order-wrapper' key={index}>

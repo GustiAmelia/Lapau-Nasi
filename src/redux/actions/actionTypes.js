@@ -12,3 +12,5 @@ export const rejected = "_REJECTED";
 
 export const login = 'LOGIN';
 export const logout ='LOGOUT';
+
+export const fetchHistory = 'FETCH_HISTORY';

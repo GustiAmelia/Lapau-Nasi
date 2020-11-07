@@ -97,3 +97,7 @@ export const signUp =(newUser)=>{
     level_id:2
   })
 }
+
+export const history = ()=>{
+  return Axios.get(`${process.env.REACT_APP_API_URL}/history`)
+}

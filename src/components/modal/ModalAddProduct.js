@@ -4,8 +4,8 @@ import {addProductCreator} from '../../redux/actions/menu';
 
 const ModalAddProduct =()=> {
 
-  const category = useSelector((state)=>state.menu.category)
-
+  const category = useSelector((state)=>state.menu.category);
+  
   const dispatch =useDispatch();
 
   const [form,setForm]=useState({
@@ -41,7 +41,7 @@ const ModalAddProduct =()=> {
       category_id:null,
     })
   }
-  console.log(form)
+  
   return (
     <div className="modal fade" id="modalAddProduct" tabIndex="-1">
       <div className="modal-dialog modal-dialog-centered">

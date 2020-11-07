@@ -11,6 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import ModalAddProduct from '../components/modal/ModalAddProduct';
 import {Redirect} from 'react-router-dom';
 import ModalLogOut from '../components/modal/ModalLogOut';
+import {getHistoryCreator} from '../redux/actions/history';
 
 toast.configure()
 const Home =()=> {
@@ -19,7 +20,8 @@ const Home =()=> {
 
   useEffect(()=>{
     dispatch(getAllMenus(1,6));
-    dispatch(getCategory())
+    dispatch(getCategory());
+    dispatch(getHistoryCreator())
   },[])
 
   const data = useSelector((state)=>state.menu.menus);
