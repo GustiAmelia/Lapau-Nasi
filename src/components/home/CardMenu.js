@@ -10,7 +10,8 @@ const CardMenu =({menu})=> {
   const dispatch = useDispatch();
 
   const handleChoseProduct =()=>{
-    dispatch(itemToCart(menu.id,menu.image,menu.product_name,menu.price))
+    // dispatch(itemToCart(menu.id,menu.image,menu.product_name,menu.price))
+    dispatch(itemToCart(menu))
   }
   let check;
     if(menu.selected === true){
@@ -25,7 +26,7 @@ const CardMenu =({menu})=> {
   return (
     <div className='col mb-4'>
       <div className="card" onClick={handleChoseProduct}>
-        <div style={{position:'relative'}}>
+        <div style={{position:'relative',width:'250px'}}>
           <img src={process.env.REACT_APP_API_URL+'/'+menu.image} className="card-img-top" alt="..."/>
           {check}
         </div>

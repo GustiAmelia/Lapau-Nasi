@@ -60,6 +60,10 @@ h1{
 }
 .card-img-top{
   cursor: pointer;
+  /* width: 250px; */
+  width: 15.625em;
+  height: 12.5em;
+  /* height: 200px; */
 }
 .card-title{
   /* border: 1px solid green; */
@@ -134,7 +138,7 @@ h1{
 .button-wrapper{
   display: flex;
   flex-direction: row;
-  margin-top: 2vh;
+  margin-top: 3vh;
 }
 .name-and-quantity{
   font-size: 1.5625em;
@@ -318,4 +322,17 @@ h1{
   background-color:#82DE3A !important;
   color: #FFFFFF !important;
   font-weight: bold !important;
+}
+
+/* card edit */
+.btn-edit{
+  background: #57CAD5;
+  color: #FFFFFF;
+  width: 40%;
+  margin-right: 1vw;
+}
+.btn-delete{
+  background: #F24F8A;
+  color: #FFFFFF;
+  width: 40%;
 }

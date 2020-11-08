@@ -2,8 +2,8 @@ import Axios from 'axios';
 import {ToastContainer, toast,Bounce} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-export const fetchAllMenu = (page,limit) => {
-    return Axios.get(`${process.env.REACT_APP_API_URL}/product?page=${page}&limit=${limit}`);
+export const fetchAllMenu = (page) => {
+    return Axios.get(`${process.env.REACT_APP_API_URL}/product?page=${page}&limit=6`);
 };
 
 export const addTransation =(data)=>{
@@ -100,4 +100,8 @@ export const signUp =(newUser)=>{
 
 export const history = ()=>{
   return Axios.get(`${process.env.REACT_APP_API_URL}/history`)
+}
+
+export const deleteProduct =(id)=>{
+  return Axios.delete(`${process.env.REACT_APP_API_URL}/product?id=${id}`)
 }

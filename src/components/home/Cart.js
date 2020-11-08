@@ -3,10 +3,12 @@ import {useDispatch,useSelector} from 'react-redux';
 import noCart from '../../assets/image/food-and-restaurant.png';
 import CartCard from './CartCard';
 import ModalCheckout from '../modal/ModalCheckout';
+import EditCard from './EditCard';
 
 const Cart =()=> {
 
   const carts = useSelector((state)=>state.menu.carts);
+  const isAdmin = useSelector((state)=>state.auth.isAdmin);
 
   const total = carts.reduce((total, item) => { return total + (item.price * item.quantity) }, 0);
   
@@ -16,6 +18,8 @@ const Cart =()=> {
         <h1 className='cart-title'>Cart</h1>
         <h1 className='quantity-in-cart'>{carts.length}</h1>
       </div>
+      {!isAdmin ?
+      <>
       <div className='content-cart'>
         {carts.length === 0 ?
         <>
@@ -33,8 +37,7 @@ const Cart =()=> {
             )
           })}
         </>
-        }
-        
+        } 
       </div>
       {carts.length === 0 ? null :
         <>
@@ -48,7 +51,18 @@ const Cart =()=> {
           <ModalCheckout total={total}/>
         </>
       }
+      </>
+      :
+      <>
+        {carts.map((item,index)=>{
+          return (
+            <EditCard item={item} key={index}/>
+          )
+        })}
+      </>
+      }
     </div>
+
   )
 }
 

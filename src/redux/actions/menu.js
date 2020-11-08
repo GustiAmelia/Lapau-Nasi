@@ -1,23 +1,24 @@
-import {fetchAllMenu,addTransation,fetchAllCategory,addNewProduct} from '../../services/urlApi';
+import {fetchAllMenu,addTransation,fetchAllCategory,addNewProduct,deleteProduct} from '../../services/urlApi';
 
 import * as actions from './actionTypes'
 
-export const getAllMenus =(page,limit)=>{
+export const getAllMenus =(page)=>{
   return{
     type : actions.fetchMenu,
-    payload :fetchAllMenu(page,limit),
+    payload :fetchAllMenu(page),
   };
 };
 
-export const itemToCart = (id,image, product_name, price ) => {
+export const itemToCart = (menu ) => {
   return {
       type: actions.addMenuToCart,
       payload: {
-          id,
-          image,
+          id : menu.id,
+          image : menu.image,
           quantity: 1,
-          product_name,
-          price,
+          product_name : menu.product_name,
+          price : menu.price,
+          
       }
   };
 };
@@ -31,6 +32,13 @@ export const incrementCreator = (id)=>{
     
   };
 };
+
+export const deleteItemCartCreator =(id)=>{
+  return {
+    type: actions.deleteItemCart,
+    payload:{id}
+  }
+}
 
 export const decrementCreator = (id)=>{
   return {
@@ -67,6 +75,14 @@ export const addProductCreator =(data)=>{
     payload:addNewProduct(data),
   }
 }
+
+export const deleteProductCreator = (id)=>{
+  return {
+    type:actions.deletProduct,
+    payload:deleteProduct(id)
+  }
+}
+
 
 
 

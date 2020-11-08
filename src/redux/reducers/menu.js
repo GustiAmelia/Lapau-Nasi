@@ -64,6 +64,16 @@ const menuReducers =(state=initialState,action)=>{
           menus:[...newMenu]
         }
       };
+    case actions.deleteItemCart:
+      newCart=[...state.carts.filter(cart=>{
+        return cart.id !== action.payload.id})];
+      newMenu=[...state.menus.filter(menu=>{
+        return menu.id !== action.payload.id})];
+      return {
+        ...state,
+        carts: [...newCart],
+        menus:[...newMenu],
+      }
     case actions.removeItemCart:
       return{
         ...state,

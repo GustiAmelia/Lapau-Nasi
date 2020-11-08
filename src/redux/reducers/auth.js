@@ -29,7 +29,7 @@ const authReducer = (state=initialState,action)=>{
       let login = null;
       let authError = null;
       if (action.payload.data.isSuccess){
-        if (action.payload.data.results.level_id === 1){
+        if (action.payload.data.results.data.level_id ===1){
           admin = true;
           login = true;
           authError = null;

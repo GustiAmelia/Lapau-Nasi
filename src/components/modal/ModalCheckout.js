@@ -1,6 +1,7 @@
 import React,{useEffect} from 'react';
 import {useDispatch,useSelector} from 'react-redux';
 import {addTransactionCreator,removeCartCreator,getAllMenus} from '../../redux/actions/menu';
+import {getHistoryCreator} from '../../redux/actions/history';
 
 const ModalCheckout =({total})=> {
   const carts = useSelector((state)=>state.menu.carts);
@@ -28,7 +29,7 @@ const ModalCheckout =({total})=> {
   const handlePrintButton = ()=>{
     dispatch(addTransactionCreator(data))
     dispatch(removeCartCreator());
-    dispatch(getAllMenus(1,6))
+    dispatch(getAllMenus(1,6));
   }
 
   return (

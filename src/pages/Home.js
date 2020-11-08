@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react';
+import React,{useEffect, useState} from 'react';
 import {useDispatch,useSelector} from 'react-redux';
 import '../components/home/home.css';
 import Navbar from '../components/home/Navbar';
@@ -18,14 +18,33 @@ const Home =()=> {
 
   const dispatch = useDispatch();
 
+  const data = useSelector((state)=>state.menu.menus);
+  // const [page,setPage]=useState(1);
+  // const [menu,setMenu]=useState([]);
+  // const [loading,setLoading]=useState(true);
+
+  // const handleScroll = e => {
+  //   const { scrollTop, clientHeight, scrollHeight} = e.currentTarget;
+    
+  //   if(scrollHeight - scrollTop === clientHeight){
+  //     setPage (prev => prev + 1);
+  //   }
+  // }
+
   useEffect(()=>{
-    dispatch(getAllMenus(1,6));
+    // const loadMenu = ()=>{
+    //   setLoading(true);
+    //   dispatch(getAllMenus(page));
+    //   setMenu((prev) => [...prev,...data]);
+    //   setLoading(false);
+    // }
+    // loadMenu();
+    dispatch(getAllMenus(2));
     dispatch(getCategory());
     dispatch(getHistoryCreator())
   },[])
 
-  const data = useSelector((state)=>state.menu.menus);
-
+  
   const isLogin = useSelector((state)=>state.auth.isLogin)
   if(isLogin === false) return <Redirect to='/signin'/>
   
