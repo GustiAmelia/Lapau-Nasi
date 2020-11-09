@@ -11,7 +11,7 @@ const HistoryTable =()=> {
       <div className='header-table'>
         <h1>Recent Order</h1>
         <div className="dropdown">
-          <button className="btn  dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <button className="btn btn-filter dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Month
           </button>
           <div className="dropdown-menu">

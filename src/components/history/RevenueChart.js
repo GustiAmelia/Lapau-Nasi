@@ -50,7 +50,7 @@ const RevenueChart =()=> {
       <div className='header-chart'>
         <h1>Revenue</h1>
         <div className="dropdown">
-          <button className="btn  dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <button className="btn btn-filter dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Month
           </button>
           <div className="dropdown-menu">
