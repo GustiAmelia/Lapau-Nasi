@@ -10,7 +10,7 @@ const HistoryTable =()=> {
     <div className='table-wrapper'>
       <div className='header-table'>
         <h1>Recent Order</h1>
-        <select id="category" className="" >
+        <select id="category" className="filter" >
           <option defaultValue>Month</option>
           <option>Year</option>
         </select>

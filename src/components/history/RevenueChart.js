@@ -14,9 +14,9 @@ const RevenueChart =()=> {
     backgroundColor: 'rgba(75,192,192,1)',
     borderColor: 'rgba(0,0,0,1)',
     borderWidth: 2,
-    data: [65, 59, 80, 81, 56]
+    data: [20, 59, 70, 81, 10],
     }
-    ]
+    ],
   }
 
   const options ={
@@ -40,12 +40,12 @@ const RevenueChart =()=> {
     <div className='chart-wrapper'>
       <div className='header-chart'>
         <h1>Revenue</h1>
-        <select id="category" className="" >
+        <select id="category" className="filter" >
           <option defaultValue>Month</option>
           <option>Year</option>
         </select>
       </div>
-      <Line data={data}
+      <Line data={data} height='60vh'
       options={options}/>
     </div>
   );

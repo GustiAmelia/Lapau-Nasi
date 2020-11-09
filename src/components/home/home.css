@@ -52,7 +52,8 @@ h1{
   margin-left: 0.1vw;
   margin-right: 0.1vw;
   overflow:auto;
-  height: 34.0em;
+  /* height: 34.0em; */
+  height: 87vh;
 }
 .card{
   background: rgba(190, 195, 202, 0);

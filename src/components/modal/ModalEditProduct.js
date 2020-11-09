@@ -24,7 +24,7 @@ const ModalEditProduct =({item})=> {
       <div className="modal-dialog modal-dialog-centered">
         <div className="modal-content">
           <div className="modal-body">
-            <h6 className='title-add-product'>Add Item</h6>
+            <h6 className='title-add-product'>Edit Item</h6>
             <form>
               <div className='errorMessage'>
                 {form.message === null ? null : <p>{form.message}</p>}
@@ -69,7 +69,7 @@ const ModalEditProduct =({item})=> {
           </div>
           <div className="footer-modal-add">
             <button type="button" className="btn btn-cancel-add" data-dismiss='modal'>Cancel</button>
-            <button type="button" className="btn btn-add" onClick={handleAddButton}>Add</button> 
+            <button type="button" className="btn btn-add" onClick={handleAddButton}>Save</button> 
           </div>
         </div>
       </div>
