@@ -15,7 +15,11 @@ const Cart =()=> {
   return (
     <div className='cart'>
       <div className='navbar-cart no-gutters'>
+        {!isAdmin ?
         <h1 className='cart-title'>Cart</h1>
+        :
+        <h1 className='cart-title'>Selected</h1>
+        }
         <h1 className='quantity-in-cart'>{carts.length}</h1>
       </div>
       {!isAdmin ?

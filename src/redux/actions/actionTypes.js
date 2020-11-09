@@ -16,3 +16,4 @@ export const logout ='LOGOUT';
 export const fetchHistory = 'FETCH_HISTORY';
 export const deleteItemCart = 'DELETE_ITEM_CART';
 export const deletProduct ='DELETE_PRODUCT';
+export const editProduct = 'EDIT_PRODUCT';

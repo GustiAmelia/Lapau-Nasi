@@ -1,4 +1,4 @@
-import {fetchAllMenu,addTransation,fetchAllCategory,addNewProduct,deleteProduct} from '../../services/urlApi';
+import {fetchAllMenu,addTransation,fetchAllCategory,addNewProduct,deleteProduct,editProduct} from '../../services/urlApi';
 
 import * as actions from './actionTypes'
 
@@ -18,6 +18,8 @@ export const itemToCart = (menu ) => {
           quantity: 1,
           product_name : menu.product_name,
           price : menu.price,
+          category:menu.category,
+          category_id:menu.category_id
           
       }
   };
@@ -80,6 +82,13 @@ export const deleteProductCreator = (id)=>{
   return {
     type:actions.deletProduct,
     payload:deleteProduct(id)
+  }
+}
+
+export const editProductCreator =(id,data)=>{
+  return {
+    type:actions.editProduct,
+    payload:editProduct(id,data)
   }
 }
 
