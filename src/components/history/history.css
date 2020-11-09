@@ -92,3 +92,16 @@
 .revenueChart{
   height: 20vh;
 }
+.dropdown-menu{
+  margin-right: 7vw;
+  border: none;
+}
+.month{
+  /* margin-right: -5vw;
+  padding-right: -5vw; */
+  width: 90%;
+}
+.btn{
+  background: #CECECE;
+  border-radius: 10px;
+}

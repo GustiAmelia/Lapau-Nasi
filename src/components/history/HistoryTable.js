@@ -10,10 +10,14 @@ const HistoryTable =()=> {
     <div className='table-wrapper'>
       <div className='header-table'>
         <h1>Recent Order</h1>
-        <select id="category" className="filter" >
-          <option defaultValue>Month</option>
-          <option>Year</option>
-        </select>
+        <div className="dropdown">
+          <button className="btn  dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Month
+          </button>
+          <div className="dropdown-menu">
+            <input type='month' className='month'/>
+          </div>
+        </div>
       </div>
       <table className="table table-hover">
         <thead>
