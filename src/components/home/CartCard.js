@@ -1,6 +1,5 @@
-import React,{useEffect} from 'react';
-import {useDispatch,useSelector} from 'react-redux';
-import imgCart from '../../assets/image/bear.png';
+import React from 'react';
+import {useDispatch} from 'react-redux';
 import { incrementCreator,decrementCreator} from '../../redux/actions/menu';
 
 const CartCard =({item})=> {

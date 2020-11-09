@@ -1,5 +1,5 @@
-import React,{useEffect} from 'react';
-import {useDispatch,useSelector} from 'react-redux';
+import React from 'react';
+import {useSelector} from 'react-redux';
 import noCart from '../../assets/image/food-and-restaurant.png';
 import CartCard from './CartCard';
 import ModalCheckout from '../modal/ModalCheckout';
@@ -58,11 +58,22 @@ const Cart =()=> {
       </>
       :
       <>
+        {carts.length === 0 ? 
+        <>
+          <div className='image-no-cart-wrapper'>
+            <img src={noCart} className='image-no-cart' alt='...'/>
+          </div>
+          <h3 className='text-cart'>Upps Nothing</h3>
+        </>
+        :
+        <>
         {carts.map((item,index)=>{
           return (
             <EditCard item={item} key={index}/>
           )
         })}
+        </>
+        }
       </>
       }
     </div>

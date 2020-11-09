@@ -2,8 +2,11 @@ import Axios from 'axios';
 import {toast,Bounce} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-export const fetchAllMenu = (page) => {
-    return Axios.get(`${process.env.REACT_APP_API_URL}/product?page=${page}&limit=6`);
+// export const fetchAllMenu = (page) => {
+//     return Axios.get(`${process.env.REACT_APP_API_URL}/product?page=${page}&limit=6`);
+// };
+export const fetchAllMenu = () => {
+  return Axios.get(`${process.env.REACT_APP_API_URL}/product`);
 };
 
 export const addTransation =(data)=>{

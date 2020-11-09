@@ -2,10 +2,16 @@ import {fetchAllMenu,addTransation,fetchAllCategory,addNewProduct,deleteProduct,
 
 import * as actions from './actionTypes'
 
-export const getAllMenus =(page)=>{
+// export const getAllMenus =(page)=>{
+//   return{
+//     type : actions.fetchMenu,
+//     payload :fetchAllMenu(page),
+//   };
+// };
+export const getAllMenus =()=>{
   return{
     type : actions.fetchMenu,
-    payload :fetchAllMenu(page),
+    payload :fetchAllMenu(),
   };
 };
 

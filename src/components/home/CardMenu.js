@@ -1,6 +1,5 @@
-import React,{useEffect} from 'react';
-import {useDispatch,useSelector} from 'react-redux';
-import exampleImage from '../../assets/image/bear.png';
+import React from 'react';
+import {useDispatch} from 'react-redux';
 import {itemToCart} from '../../redux/actions/menu';
 import checkImg from '../../assets/image/tick.png';
 
@@ -10,7 +9,6 @@ const CardMenu =({menu})=> {
   const dispatch = useDispatch();
 
   const handleChoseProduct =()=>{
-    // dispatch(itemToCart(menu.id,menu.image,menu.product_name,menu.price))
     dispatch(itemToCart(menu))
   }
   let check;

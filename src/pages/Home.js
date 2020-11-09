@@ -39,7 +39,7 @@ const Home =()=> {
     //   setLoading(false);
     // }
     // loadMenu();
-    dispatch(getAllMenus(2));
+    dispatch(getAllMenus());
     dispatch(getCategory());
     dispatch(getHistoryCreator())
   },[])
