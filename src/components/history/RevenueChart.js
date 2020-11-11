@@ -1,18 +1,17 @@
 import React from 'react';
+import {useSelector} from 'react-redux';
 import {Line} from 'react-chartjs-2';
+import moment from 'moment'
 
 const RevenueChart =()=> {
 
-  const date = ()=>{
-    let results = []
-    for (let i = 1; i<=31; i++){
-      results.push(i)
-    }
-    return results
-  }
- 
+  const history = useSelector((state)=>state.history.history);
+  const startOfMonth = moment().startOf('month').format('DD MMMM YYYY');
+  const endOfMonth = moment().endOf('month').format('DD MMMM YYYY');
+  
+
   const data = {
-    labels: date(),
+    labels:[1,2,3,4,5,6,7,8,9,10,11,12],
     datasets: [
     {
     label: 'This Month',

@@ -29,7 +29,7 @@ const History =()=> {
     return moment(item.date).format('D') >= moment().startOf('week').format('D') - 7 && moment(item.date).format('DD MMMM YYYY') < startOfWeek })
     .reduce((total, item) =>{ return total + (item.orders.split(',').length) }, 0);
   const historyThisMonth = history.filter(item=>{return moment(item.date).format('MMMM') === moment().format('MMMM')});
-  
+
   const income ={
     totalIncomeToday,
     totalIncomeYesterday,
