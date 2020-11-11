@@ -64,7 +64,7 @@ const SignUp = ()=> {
           <label htmlFor="password">Password</label>
           <input type="password" className="form-control " id="password" onChange={handleChange}/>
         </div>
-        <div>
+        <div className='invalidPassword'>
           {form.messagePassword === '' ? null : 
           <p>{form.messagePassword}</p>}
         </div>

@@ -3,9 +3,16 @@ import {Line} from 'react-chartjs-2';
 
 const RevenueChart =()=> {
 
+  const date = ()=>{
+    let results = []
+    for (let i = 1; i<=31; i++){
+      results.push(i)
+    }
+    return results
+  }
+ 
   const data = {
-    labels: ['January', 'February', 'March',
-    'April', 'May', 'June', 'July','August','September','October','November', 'December'],
+    labels: date(),
     datasets: [
     {
     label: 'This Month',
@@ -58,7 +65,7 @@ const RevenueChart =()=> {
           </div>
         </div>
       </div>
-      <Line data={data} height='60vh'
+      <Line data={data} height={60}
       options={options}/>
     </div>
   );

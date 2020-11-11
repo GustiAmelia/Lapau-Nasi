@@ -22,6 +22,7 @@ const SideBar =()=> {
         :
         <>
           <Link to='/'><img src={fork} className='icon-sidebar-fork' alt='...'/></Link>
+          <Link to='/history'><img src={clipboard} className='icon-sidebar' alt='...'/></Link>
           <img src={logout} className='icon-sidebar' alt='...' type='button' data-toggle="modal" data-target="#modalLogout"/>
         </>
       }

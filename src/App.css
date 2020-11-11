@@ -64,3 +64,6 @@
   text-align: center;
   font-weight: bold;
 }
+.invalidPassword{
+  color:red;
+}
