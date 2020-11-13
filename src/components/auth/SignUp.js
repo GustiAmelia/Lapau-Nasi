@@ -1,12 +1,14 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {Redirect,Link} from 'react-router-dom';
-import {signUpCreator} from '../../redux/actions/auth';
+import {signUpCreator,signInCreator} from '../../redux/actions/auth';
 
 const SignUp = ()=> {
 
   const dispatch = useDispatch();
   const authError = useSelector((state)=>state.auth.authError)
+  const isRegister = useSelector((state)=>state.auth.isRegister)
+  const user = useSelector((state)=>state.auth.user)
 
   const [form,setForm]=useState({
     email:'',
@@ -41,6 +43,13 @@ const SignUp = ()=> {
       });
     }
   }
+
+  useEffect(()=>{
+    if(isRegister){
+      dispatch(signInCreator(user))
+    }
+  },[isRegister])
+  
   const isLogin = useSelector((state)=>state.auth.isLogin)
   if(isLogin) return <Redirect to='/'/>
 

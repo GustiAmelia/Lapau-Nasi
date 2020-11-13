@@ -16,7 +16,7 @@ export const logOutCreator =()=>{
 
 export const signUpCreator =(newUser)=>{
   return {
-    type: actions.login,
+    type: actions.register,
     payload:signUp(newUser)
   }
 }
